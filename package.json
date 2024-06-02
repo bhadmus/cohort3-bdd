@@ -1,0 +1,19 @@
+{
+  "name": "week-five",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^13.10.0",
+    "cypress-fill-command": "^1.0.2",
+    "cypress-mailslurp": "^1.10.0"
+  }
+}
