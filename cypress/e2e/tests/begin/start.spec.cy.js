@@ -1,34 +1,55 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then, Before } from "@badeball/cypress-cucumber-preprocessor";
 
+
+let home
+let basic
+let social
+let otpPage
+Before(() => {
+  cy.fixture('identifiers').then((ele) => {
+    home = ele.homePage
+    basic = ele.baseDetails
+    social = ele.socialDetails
+    otpPage = ele.otpPage
+  })
+});
 
 Given(/^User is on trymima page$/, () => {
-	return true;
+  cy.visit('/')
 });
 
-When(/^User clicks the Sign up button$/, () => {
-	return true;
+Then(/^User sees the OTP page$/, () => {
+  cy.verifyOTPPage()
 });
 
-When(/^User inserts the fullname$/, () => {
-	return true;
+When(/^User inserts OTP code$/, () => {
+  cy.insertOTP()
 });
 
-When(/^User inserts the business name$/, () => {
-	return true;
+Then(/^User sees the Dashboard$/, () => {
+  return true;
 });
 
-When(/^User inserts the business email$/, () => {
-	return true;
+Then(/^The following on the sidebar$/, () => {
+  return true;
 });
 
-When(/^User inserts the business phone number$/, () => {
-	return true;
+// When(/^User selects an info source$/, () => {
+//   cy.clickAnyElement(social.infoSourceField)
+//   cy.clickAnyElement(social.infoOptionDropdown)
+// });
+
+
+When(/^User clicks the "([^"]*)" button$/, (button_text) => {
+	cy.clickButton(button_text)
 });
 
-When(/^User inserts the business registration number$/, () => {
-	return true;
+When(/^User inserts the "([^"]*)"$/, (field) => {
+	cy.insertInfo(field)
 });
 
-When(/^User clicks the Next button$/, () => {
-	return true;
+
+When(/^User selects "([^"]*)" as info source$/, (media_source) => {
+	cy.infoSource(media_source)
 });
+

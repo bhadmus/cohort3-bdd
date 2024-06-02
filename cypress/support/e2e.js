@@ -15,6 +15,13 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
+import './command/custom-commands.spec'
+import 'cypress-fill-command'
+import 'cypress-mailslurp'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+beforeEach(()=>{
+    Cypress.on('uncaught:exception', ()=>{
+        return false
+    })
+})
