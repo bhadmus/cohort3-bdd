@@ -37,7 +37,7 @@ Feature: SignUp Journey on Mima web app
         Examples:
             | source          |
             | Webinar/Seminar |
-            # | Instagram       |
-            # | Facebook        |
-            # | Twitter         |
-            # | Google Search   |
+            | Instagram       |
+            | Facebook        |
+            | Twitter         |
+            | Google Search   |
