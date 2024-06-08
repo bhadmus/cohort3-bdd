@@ -21,4 +21,4 @@ jobs:
       with:
         name: test-reports  
         path: |
-          cypress/reports/
+          cypress/reports/html/cucumber-report/

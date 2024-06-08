@@ -15,16 +15,13 @@
     "@faker-js/faker": "^8.4.1",
     "cypress": "^13.10.0",
     "cypress-fill-command": "^1.0.2",
-    "cypress-mailslurp": "^1.10.0"
+    "cypress-mailslurp": "^1.10.0",
+    "multiple-cucumber-html-reporter": "^3.6.2"
   },
-  "cypress-cucumber-preprocessor":{
-    "json":{
+  "cypress-cucumber-preprocessor": {
+    "json": {
       "enabled": true,
       "output": "cypress/reports/json/reports.json"
-    },
-    "html":{
-      "enabled": true,
-      "output": "cypress/reports/html/reports.html"
     }
   }
 }
