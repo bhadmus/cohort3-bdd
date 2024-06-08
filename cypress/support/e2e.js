@@ -20,6 +20,7 @@ import 'cypress-fill-command'
 import 'cypress-mailslurp'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
 beforeEach(()=>{
     cy.on('uncaught:exception', ()=>{
         return false

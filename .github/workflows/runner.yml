@@ -2,6 +2,8 @@ name: Test Pipeline
 
 on: [push]
 
+env:
+  CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
 jobs:
   cypress-job:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
         record: true
         parallel: true
       env:
-        CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
+        CYPRESS_MAILSLURP_API_KEY: ${{env.CYPRESS_MAILSLURP_API_KEY}}
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     - run: node report.js 
 
@@ -27,3 +29,12 @@ jobs:
         name: test-reports  
         path: |
           cypress/reports/html/cucumber-report/
+
+    - name: Run Cross Browser Testing
+      uses: browserstack/github-actions/setup-env@master
+      with:
+        username: ${{secrets.BROWSERSTACK_USERNAME}} 
+        access-key: ${{secrets.BROWSERSTACK_ACCESS_KEY}}   
+
+    - run: npm i
+    - run: npx browserstack-cypress run      

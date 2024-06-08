@@ -37,10 +37,6 @@ Then(/^The following on the sidebar of the dashboard$/, (datatable) => {
   })
 });
 
-// When(/^User selects an info source$/, () => {
-//   cy.clickAnyElement(social.infoSourceField)
-//   cy.clickAnyElement(social.infoOptionDropdown)
-// });
 
 
 When(/^User clicks the "([^"]*)" button$/, (button_text) => {

@@ -16,3 +16,9 @@ cypress/screenshots
 dist/
 cypress/reports/
 cypress.env.json
+
+#browserstack files
+log/
+tmpBstackPackages/
+npm_install_debug.log
+results/

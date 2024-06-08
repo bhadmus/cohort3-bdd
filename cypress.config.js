@@ -19,6 +19,7 @@ module.exports = defineConfig({
     viewportWidth: 1520,
     chromeWebSecurity: false,
     watchForFileChanges: false,
+    experimentalWebKitSupport: true,
     specPattern: '**/*.feature',
     setupNodeEvents,
   },
