@@ -11,6 +11,7 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  projectId: "fzgzpw",
   e2e: {
     baseUrl: 'https://staging.trymima.com/',
     defaultCommandTimeout:10000,
