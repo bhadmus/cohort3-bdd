@@ -22,7 +22,17 @@ Feature: SignUp Journey on Mima web app
         Then User sees the OTP page
         When User inserts OTP code
         Then User sees the Dashboard
-        And The following on the sidebar
+        And The following on the sidebar of the dashboard
+            | side_item            |
+            | Customer             |
+            | Invoice & Accounting |
+            | Orders               |
+            | Payment Link         |
+            | Booking              |
+            | Paybills             |
+            | Stock                |
+            | Split Payments       |
+            | Employees            |
 
         Examples:
             | source          |

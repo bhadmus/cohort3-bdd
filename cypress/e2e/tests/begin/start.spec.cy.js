@@ -27,11 +27,14 @@ When(/^User inserts OTP code$/, () => {
 });
 
 Then(/^User sees the Dashboard$/, () => {
-  return true;
+  cy.get('div.CountDown_main__4rPJL')
+  .should('contain.text', 'You are currently on your Free Trial, subscribe now to get one extra month free.')
 });
 
-Then(/^The following on the sidebar$/, () => {
-  return true;
+Then(/^The following on the sidebar of the dashboard$/, (datatable) => {
+  datatable.hashes().forEach((row)=>{
+    cy.get('.Sidebar_sb_nav_item__OJG2Q').contains(row.side_item).should('exist').and('contain.text', row.side_item)
+  })
 });
 
 // When(/^User selects an info source$/, () => {
