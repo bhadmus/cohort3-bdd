@@ -1,0 +1,21 @@
+name: Test Pipeline
+
+on: [push]
+
+jobs:
+  cypress-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup
+      uses: actions/checkout@v4
+
+    - name: Run Cypress Test
+      uses: cypress-io/github-action@v6   
+
+    - name: Save Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-reports  
+        path: |
+          cypress/reports/
