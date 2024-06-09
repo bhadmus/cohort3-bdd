@@ -1,7 +1,7 @@
 name: Test Pipeline
 
 on: 
-    respository_dispatch:
+    repository_dispatch:
         types: [trigger-test]
 
 env:
