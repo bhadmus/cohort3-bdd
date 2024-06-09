@@ -1,6 +1,8 @@
 name: Test Pipeline
 
-on: [push]
+on: 
+  respository_dispatch:
+       types: [trigger-test]
 
 env:
   CYPRESS_MAILSLURP_API_KEY: ${{secrets.CYPRESS_MAILSLURP_API_KEY}}
